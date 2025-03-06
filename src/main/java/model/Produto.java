@@ -16,6 +16,17 @@ public class Produto {
 
     public String getNome() { return nome; }
     public String getDescricao() { return descricao; }
+    public float getPreco() { return preco; }
     public int getQuantidade() { return quantidade; }
-    public String getQuantidade() { return quantidade; }
+
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", preco=" + preco +
+                ", quantidade=" + quantidade +
+                '}';
+    }
 }
