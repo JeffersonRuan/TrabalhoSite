@@ -44,13 +44,13 @@ import java.util.List;
                 request.getSession().setAttribute("produtos", produtos);
 
                 request.setAttribute("sucesso", "Produto cadastrado com sucesso!");
-                request.getRequestDispatcher("index.jsp").forward(request, response);
+                request.getRequestDispatcher("cadastro.jsp").forward(request, response);
             } catch (NumberFormatException e) {
                 request.setAttribute("erro", "Erro: Preço ou quantidade inválidos!");
-                request.getRequestDispatcher("index.jsp").forward(request, response);
+                request.getRequestDispatcher("cadastro.jsp").forward(request, response);
             } catch (Exception e) {
                 request.setAttribute("erro", "Erro inesperado: " + e.getMessage());
-                request.getRequestDispatcher("index.jsp").forward(request, response);
+                request.getRequestDispatcher("cadastro.jsp").forward(request, response);
             }
         }
 }
