@@ -47,6 +47,7 @@ public class CarrinhoServlet extends HttpServlet {
                             break;
                         } else {
                             request.setAttribute("erro", "Não é possível adicionar mais produtos!");
+                            return;
                         }
                     }
                 }
@@ -65,6 +66,7 @@ public class CarrinhoServlet extends HttpServlet {
                 carrinho.removeIf(p -> p.getNome().equals(nomeProduto));
 
                 session.setAttribute("carrinho", carrinho);
+                request.setAttribute("sucesso", "Produto removido!");
             }
 
             response.sendRedirect("carrinho.jsp");

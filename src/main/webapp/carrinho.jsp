@@ -46,5 +46,15 @@
             </form>
         <% } %>
     </div>
+
+    <script>
+        <% if (request.getAttribute("erro") != null) { %>
+            alert("<%= request.getAttribute("erro") %>");
+        <% } %>
+
+        <% if (request.getAttribute("sucesso") != null) { %>
+            alert("<%= request.getAttribute("sucesso") %>");
+        <% } %>
+    </script>
 </body>
 </html>

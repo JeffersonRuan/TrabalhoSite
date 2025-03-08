@@ -24,11 +24,13 @@ import java.util.List;
 
                 if (preco <= 0) {
                     request.setAttribute("erro", "O preço deve ser maior do que 0!");
+                    request.getRequestDispatcher("cadastro.jsp").forward(request, response);
                     return;
                 }
 
                 if (quantidade <= 0) {
                     request.setAttribute("erro", "A quantidade deve ser pelo menos 1!");
+                    request.getRequestDispatcher("cadastro.jsp").forward(request, response);
                     return;
                 }
 
