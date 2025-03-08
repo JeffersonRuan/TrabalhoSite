@@ -9,7 +9,7 @@
     <div style="background-color: #333; padding: 10px; text-align: center; flex-shrink: 0;">
         <a href="index.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Produtos</a>
         <a href="cadastro.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Cadastro</a>
-        <a href="#" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Carrinho</a>
+        <a href="carrinho.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Carrinho</a>
     </div>
 
     <div style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #F0F4F9">

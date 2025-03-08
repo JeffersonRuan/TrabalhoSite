@@ -15,9 +15,9 @@
 
     <!-- Conteúdo da página -->
     <div style="padding: 20px; flex-grow: 1; overflow-y: auto;">
-        <h1>Produtos</h1>
+        <h1>Carrinho</h1>
         <%
-            List<Produto> produtos = (List<Produto>) session.getAttribute("produtos");
+            List<Produto> produtos = (List<Produto>) session.getAttribute("carrinho");
             if (produtos != null) {
                 for (Produto p : produtos) { %>
                     <div>
@@ -25,19 +25,10 @@
                         <%= p.getDescricao() %><br>
                         <%= p.getPreco() %><br>
                         <%= p.getQuantidade() %><br>
-
-                        <!-- Formulário para adicionar ao carrinho -->
-                        <form action="carrinho" method="post">
-                            <input type="hidden" name="nome" value="<%= p.getNome() %>">
-                            <input type="hidden" name="descricao" value="<%= p.getDescricao() %>">
-                            <input type="hidden" name="preco" value="<%= p.getPreco() %>">
-                            <input type="hidden" name="quantidade" value="1"> <!-- Padrão: adicionar 1 item -->
-                            <button type="submit">Adicionar ao carrinho</button>
-                        </form>
                     </div>
         <%      }
             } else { %>
-                <p>Nenhum produto cadastrado.</p>
+                <p>Nenhum produto adicionado no carrinho.</p>
         <% } %>
     </div>
 </body>
