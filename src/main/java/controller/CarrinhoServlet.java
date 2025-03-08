@@ -37,8 +37,26 @@ public class CarrinhoServlet extends HttpServlet {
                     return;
                 }
 
-                Produto produto = new Produto(nome, descricao, preco, quantidade);
-                carrinho.add(produto);
+                boolean produtoExiste = false;
+
+                for (Produto p : carrinho) {
+                    if (p.getNome().equals(nome)) {
+                        produtoExiste = true;
+                        if (p.getQuantidade() < quantidade) {
+                            p.setQuantidade(p.getQuantidade() + 1);
+                            break;
+                        } else {
+                            request.setAttribute("erro", "Não é possível adicionar mais produtos!");
+                        }
+                    }
+                }
+
+                if (!produtoExiste) {
+                    Produto produto = new Produto(nome, descricao, preco, 1);
+                    carrinho.add(produto);
+                }
+
+                request.setAttribute("sucesso", "Produto adicionado ao carrinho!");
                 session.setAttribute("carrinho", carrinho);
 
             } else if ("remover".equals(acao)) {

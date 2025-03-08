@@ -19,6 +19,9 @@ public class Produto {
     public float getPreco() { return preco; }
     public int getQuantidade() { return quantidade; }
 
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
 
     @Override
     public String toString() {

@@ -32,7 +32,7 @@
                             <input type="hidden" name="nome" value="<%= p.getNome() %>">
                             <input type="hidden" name="descricao" value="<%= p.getDescricao() %>">
                             <input type="hidden" name="preco" value="<%= p.getPreco() %>">
-                            <input type="hidden" name="quantidade" value="1"> <!-- Padrão: adicionar 1 item -->
+                            <input type="hidden" name="quantidade" value="<%= p.getQuantidade() %>">
                             <button type="submit">Adicionar ao carrinho</button>
                         </form>
                     </div>
@@ -41,5 +41,16 @@
                 <p>Nenhum produto cadastrado.</p>
         <% } %>
     </div>
+
+    <!-- Script para exibir alertas -->
+    <script>
+        <% if (request.getAttribute("erro") != null) { %>
+            alert("<%= request.getAttribute("erro") %>");
+        <% } %>
+
+        <% if (request.getAttribute("sucesso") != null) { %>
+            alert("<%= request.getAttribute("sucesso") %>");
+        <% } %>
+    </script>
 </body>
 </html>

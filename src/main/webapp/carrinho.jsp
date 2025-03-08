@@ -33,9 +33,17 @@
                             <button type="submit">Remover</button>
                         </form>
                     </div>
+
         <%      }
             } else { %>
                 <p>Carrinho Vazio</p>
+        <% } %>
+
+        <% if (produtos != null && !produtos.isEmpty()) { %>
+            <form action="carrinho" method="post">
+                <input type="hidden" name="acao" value="finalizar">
+                <button type="submit">Finalizar Pedido</button>
+            </form>
         <% } %>
     </div>
 </body>
