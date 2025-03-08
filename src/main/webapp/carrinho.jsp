@@ -18,17 +18,24 @@
         <h1>Carrinho</h1>
         <%
             List<Produto> produtos = (List<Produto>) session.getAttribute("carrinho");
-            if (produtos != null) {
+            if (produtos != null && !produtos.isEmpty()) {
                 for (Produto p : produtos) { %>
                     <div>
                         <%= p.getNome() %><br>
                         <%= p.getDescricao() %><br>
                         <%= p.getPreco() %><br>
                         <%= p.getQuantidade() %><br>
+
+                        <!-- Formulário para remover o produto -->
+                        <form action="carrinho" method="post">
+                            <input type="hidden" name="acao" value="remover">
+                            <input type="hidden" name="nome" value="<%= p.getNome() %>">
+                            <button type="submit">Remover</button>
+                        </form>
                     </div>
         <%      }
             } else { %>
-                <p>Nenhum produto adicionado no carrinho.</p>
+                <p>Carrinho Vazio</p>
         <% } %>
     </div>
 </body>

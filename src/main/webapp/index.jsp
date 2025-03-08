@@ -28,6 +28,7 @@
 
                         <!-- Formulário para adicionar ao carrinho -->
                         <form action="carrinho" method="post">
+                            <input type="hidden" name="acao" value="adicionar">
                             <input type="hidden" name="nome" value="<%= p.getNome() %>">
                             <input type="hidden" name="descricao" value="<%= p.getDescricao() %>">
                             <input type="hidden" name="preco" value="<%= p.getPreco() %>">
