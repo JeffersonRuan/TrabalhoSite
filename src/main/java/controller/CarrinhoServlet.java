@@ -47,6 +47,7 @@ public class CarrinhoServlet extends HttpServlet {
                             break;
                         } else {
                             request.setAttribute("erro", "Não é possível adicionar mais produtos!");
+                            request.getRequestDispatcher("carrinho.jsp").forward(request, response);
                             return;
                         }
                     }
