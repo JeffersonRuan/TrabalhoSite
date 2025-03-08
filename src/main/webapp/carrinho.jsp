@@ -41,7 +41,7 @@
         <% } %>
 
         <% if (produtos != null && !produtos.isEmpty()) { %>
-            <form action="carrinho" method="post">
+            <form action="pedidos" method="post">
                 <input type="hidden" name="acao" value="finalizar">
                 <button type="submit">Finalizar Pedido</button>
             </form>

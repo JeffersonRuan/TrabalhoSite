@@ -23,10 +23,11 @@
                 for (Pedido p : pedidos) { %>
                     <div>
                         <%= p.getNumeroPedido() %>
+                        <%= p.getProdutos() %>
                     </div>
         <%      }
             } else { %>
-                <p>Nenhum pedido realizado.</p>
+                <p>Seu carrinho está vazio.</p>
         <% } %>
     </div>
 </body>
