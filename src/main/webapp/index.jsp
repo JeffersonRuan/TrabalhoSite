@@ -28,10 +28,10 @@
                     if (produtos != null) {
                         for (Produto p : produtos) { %>
                             <div class="produto">
-                                <%= p.getNome() %><br>
-                                <%= p.getDescricao() %><br>
-                                <%= p.getPreco() %><br>
-                                <%= p.getQuantidade() %><br>
+                                Nome: <%= p.getNome() %><br>
+                                Descrição: <%= p.getDescricao() %><br>
+                                Preço: R$ <%= p.getPreco() %><br>
+                                Quantidade: <%= p.getQuantidade() %><br>
 
                                 <!-- Formulário para adicionar ao carrinho -->
                                 <form action="carrinho" method="post">

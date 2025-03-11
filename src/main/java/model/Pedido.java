@@ -18,5 +18,10 @@ public class Pedido {
     public List<Produto> getProdutos() {
         return this.produtos;
     }
+
+    @Override
+    public String toString() {
+        return "Pedido: " + numeroPedido + " - " + produtos;
+    }
 }
 
