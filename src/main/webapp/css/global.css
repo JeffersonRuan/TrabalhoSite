@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Estilização do body */
+body {
+    background: linear-gradient(135deg, #000A0E, #000, #000, #000, #000A0E) !important;
+    color: #333;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+}
+
+.navbar {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    padding: 20px 50px !important;
+    border-radius: 50px;
+    border-radius: 50px;
+    background: #0d0d0d !important;
+    box-shadow:  20px 20px 60px #040404,
+                 -20px -20px 60px #060606;
+}
+
+.navbar a {
+    font-weight: 400 !important;
+    opacity: .7;
+    transition: all 300ms ease-in-out;
+}
+
+.navbar a:hover {
+    opacity: 1;
+}
+
+.content {
+    padding-inline: 20px !important;
+
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentProdutos {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.contentCarrinho {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.contentPedidos {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.button {
+cursor: pointer;
+    border: none;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 40px;
+    background: linear-gradient(to right, #005C96, #003455);
+    text-decoration: none;
+    margin-top: 20px;
+
+    transition: all 300ms ease-in-out;
+}
+
+.button:hover {
+    filter: brightness(1.2)
+}
+
+.button.remover {
+background: #FF4F4F;
+}
+
+.button.finalizar {
+background: #5EFF4F;
+color: #000;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+color: #fff;
+margin-bottom: 30px;
+}
+
+.form {
+    border: 1px solid #00121A;
+    width: 40%;
+    padding: 40px !important;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #000A0E, #000, #000, #000, #000A0E) !important;
+    box-shadow:  20px 20px 60px #040404,
+                 -20px -20px 60px #060606;
+}
+
+.form .inputs {
+width: 100%;
+gap: 10px;
+}
+
+.form .input {
+width: 100%;
+}
+
+.form input {
+width: 100%;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 10px;
+    background: linear-gradient(135deg, #000A0E, #000, #00090D, #000, #000A0E) !important;
+    border: 1px solid #0B0B0B;
+}
+
+.produto {
+    text-align: center;
+    margin-top: 20px;
+    border: 1px solid #00121A;
+    padding: 30px !important;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #000A0E, #000, #000, #000, #000A0E) !important;
+    box-shadow:  20px 20px 60px #040404,
+                 -20px -20px 60px #060606;
+}
+
+.pedido {
+    text-align: center;
+    margin-top: 20px;
+    border: 1px solid #00121A;
+    padding: 40px !important;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #000A0E, #000, #000, #000, #000A0E) !important;
+    box-shadow:  20px 20px 60px #040404,
+                 -20px -20px 60px #060606;
+}
+
+.produto {
+    color: #fff;
+}
+
+.form label {
+}
