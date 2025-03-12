@@ -19,7 +19,7 @@
     </div>
 
     <!-- Conteúdo da página -->
-    <div class="content" style="padding: 20px; flex-grow: 1; overflow-y: auto;">
+    <div class="content" style="color: white; padding: 30px; flex-grow: 1; overflow-y: auto;">
         <h1>Pedidos</h1>
         <div class="contentPedidos">
         <%

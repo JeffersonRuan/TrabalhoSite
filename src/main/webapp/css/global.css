@@ -151,18 +151,51 @@ width: 100%;
 }
 
 .pedido {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
     margin-top: 20px;
-    border: 1px solid #00121A;
-    padding: 40px !important;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #000A0E, #000, #000, #000, #000A0E) !important;
-    box-shadow:  20px 20px 60px #040404,
-                 -20px -20px 60px #060606;
+    padding: 20px 30px;
+    border: 2px solid #4A4A4A;
+    border-radius: 15px;
+    background-color: #1E1E1E;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pedido .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pedido .info span {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #dcdcdc;
+}
+
+.pedido .numeroPedido {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.contentPedidos {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .produto {
-    color: #fff;
+    color: #ffffff;
 }
 
 .form label {

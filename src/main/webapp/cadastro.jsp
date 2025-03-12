@@ -21,11 +21,11 @@
         <div class="form">
                 <h2>Cadastrar Produto</h2>
                 <form class="form" action="cadastrar" method="post" style="display:flex; flex-direction: column; justify-content: space-around;">
-                    <div style="display:flex; flex-direction: column;">Nome <input type="text" name="nome" required></div>
-                    <div style="display:flex; flex-direction: column;">Descrição <input type="text" name="descricao" required></div>
-                    <div class="inputs" style="display:flex; flex-direction: row;">
-                        <div class="input" style="display:flex; flex-direction: column;">Preco <input type="number" name="preco" required></div>
-                        <div class="input" style="display:flex; flex-direction: column;">Quantidade <input type="number" name="quantidade" required></div>
+                    <div style="color: white; display:flex; flex-direction: column;">Nome: <input type="text" name="nome" required></div>
+                    <div style="color: white; display:flex; flex-direction: column;">Descrição: <input type="text" name="descricao" required></div>
+                    <div class="inputs" style="color: white; display:flex; flex-direction: row;">
+                        <div class="input" style="color: white; display:flex; flex-direction: column;">Preço: <input type="number" name="preco" required></div>
+                        <div class="input" style="color: white; display:flex; flex-direction: column;">Quantidade: <input type="number" name="quantidade" required></div>
                     </div>
 
                     <button class="button" type="submit">Cadastrar</button>
