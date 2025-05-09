@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/global.css">
-    <script src="js/usuarios.js" defer></script>
     <title>Login</title>
     <style>
         body {
@@ -91,5 +90,7 @@
             </div>
         </form>
     </div>
+
+    <script src="../resources/static/js/usuarios.js" defer></script>
 </body>
 </html>
