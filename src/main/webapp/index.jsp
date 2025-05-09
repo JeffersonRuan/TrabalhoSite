@@ -6,13 +6,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="../resources/static/css/global.css">
     <title>Produtos</title>
 
 </head>
 <body style="display: flex; flex-direction: column; height: 100vh; margin: 0;">
     <!-- Menu superior -->
-    <div class="navbar" style="background-color: #333; padding: 10px; text-align: center; flex-shrink: 0;">
+    <div class="navbar">
         <a href="index.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Produtos</a>
         <a href="WEB-INF/jsp/cadastro.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Cadastro</a>
         <a href="carrinho.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Carrinho</a>
