@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="model.Pedido, java.util.List" %>
+<%@ page import="com.TrabalhoSite.model.Pedido, java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
     <!-- Menu superior -->
     <div class="navbar" style="background-color: #333; padding: 10px; text-align: center; flex-shrink: 0;">
         <a href="index.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Produtos</a>
-        <a href="cadastro.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Cadastro</a>
+        <a href="WEB-INF/jsp/cadastro.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Cadastro</a>
         <a href="carrinho.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Carrinho</a>
         <a href="pedidos.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Pedidos</a>
     </div>

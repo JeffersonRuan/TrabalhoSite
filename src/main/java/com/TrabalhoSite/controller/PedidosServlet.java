@@ -1,13 +1,13 @@
-package controller;
+package com.TrabalhoSite.controller;
 
 import jakarta.servlet.http.HttpSession;
-import model.Pedido;
+import com.TrabalhoSite.model.Pedido;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Produto;
+import com.TrabalhoSite.model.Produto;
 
 import java.io.IOException;
 import java.util.ArrayList;

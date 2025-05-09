@@ -1,6 +1,6 @@
-package controller;
+package com.TrabalhoSite.controller;
 
-import model.Produto;
+import com.TrabalhoSite.model.Produto;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

@@ -1,12 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="model.Produto, java.util.List" %>
+<%@ page import="com.TrabalhoSite.model.Produto, java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./css/global.css">
+    <link rel="stylesheet" type="text/css" href="css/global.css">
     <title>Produtos</title>
 
 </head>
@@ -14,7 +14,7 @@
     <!-- Menu superior -->
     <div class="navbar" style="background-color: #333; padding: 10px; text-align: center; flex-shrink: 0;">
         <a href="index.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Produtos</a>
-        <a href="cadastro.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Cadastro</a>
+        <a href="WEB-INF/jsp/cadastro.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Cadastro</a>
         <a href="carrinho.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Carrinho</a>
         <a href="pedidos.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Pedidos</a>
     </div>
@@ -46,7 +46,7 @@
                 <%      }
                     } else { %>
                         <p>Nenhum produto cadastrado.</p>
-                        <a class="button" href="cadastro.jsp">Clique para cadastrar</a>
+                        <a class="button" href="WEB-INF/jsp/cadastro.jsp">Clique para cadastrar</a>
                 <% } %>
         </div>
     </div>

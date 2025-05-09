@@ -1,17 +1,24 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="com.TrabalhoSite.model.Produto, java.util.List" %>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./css/global.css">
-    <script src="js/usuarios.js" defer></script>
-    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- CSS externo (descomente se for usar) -->
+    <!-- <link rel="stylesheet" href="/css/global.css"> -->
+
+    <!-- JS externo (descomente se for usar) -->
+    <!-- <script src="/js/usuarios.js" defer></script> -->
+
     <style>
         body {
-            background-color: #fff !important;
+            background-color: #fff;
             margin: 0;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
@@ -39,7 +46,8 @@
             font-weight: 600;
         }
         input[type="text"],
-        input[type="password"] {
+        input[type="password"],
+        input[type="email"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 16px;
@@ -66,7 +74,6 @@
             text-align: center;
             margin-top: 16px;
         }
-
         .link-container a {
             text-decoration: none;
             font-weight: bolder;
@@ -74,22 +81,25 @@
         }
     </style>
 </head>
-
 <body>
-    <div class="login-container">
-        <h2>Cadastro</h2>
-        <form id="cadastroForm">
-            <label for="name">Nome</label>
-            <input type="text" name="name" id="name">
-            <label for="user">Email</label>
-            <input type="text" name="user" id="email">
-            <label for="password">Senha</label>
-            <input type="password" name="password" id="password">
-            <button class="button" type="submit">Cadastrar</button>
-            <div class="link-container">
-                <a href="login.jsp">Já tenho conta</a>
-            </div>
-        </form>
-    </div>
+<div class="login-container">
+    <h2>Cadastro</h2>
+    <form id="cadastroForm">
+        <label for="name">Nome</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password" required>
+
+        <button class="button" type="submit">Cadastrar</button>
+
+        <div class="link-container">
+            <a href="#login">Já tenho conta</a>
+        </div>
+    </form>
+</div>
 </body>
 </html>

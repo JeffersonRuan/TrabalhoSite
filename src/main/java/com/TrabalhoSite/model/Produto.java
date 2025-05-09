@@ -1,4 +1,4 @@
-package model;
+package com.TrabalhoSite.model;
 
 public class Produto {
     private String nome;

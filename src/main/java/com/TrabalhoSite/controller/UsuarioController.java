@@ -1,10 +1,11 @@
-package controller;
+package com.TrabalhoSite.controller;
 
-import model.Usuario;
-import repository.UsuarioRepository;
+import com.TrabalhoSite.model.Usuario;
+import com.TrabalhoSite.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 

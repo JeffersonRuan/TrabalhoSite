@@ -1,6 +1,6 @@
-package repository;
+package com.TrabalhoSite.repository;
 
-import model.Usuario;
+import com.TrabalhoSite.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {

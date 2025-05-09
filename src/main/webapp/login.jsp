@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="model.Produto, java.util.List" %>
+<%@ page import="com.TrabalhoSite.model.Produto, java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
