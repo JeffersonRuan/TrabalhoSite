@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/global.css">
+    <script src="js/usuarios.js" defer></script>
     <title>Login</title>
     <style>
         body {
@@ -77,13 +78,13 @@
 <body>
     <div class="login-container">
         <h2>Cadastro</h2>
-        <form action="carrinho" method="post">
+        <form id="cadastroForm">
             <label for="name">Nome</label>
-            <input type="text" name="name">
+            <input type="text" name="name" id="name">
             <label for="user">Email</label>
-            <input type="text" name="user">
+            <input type="text" name="user" id="email">
             <label for="password">Senha</label>
-            <input type="password" name="password">
+            <input type="password" name="password" id="password">
             <button class="button" type="submit">Cadastrar</button>
             <div class="link-container">
                 <a href="login.jsp">Já tenho conta</a>
