@@ -10,7 +10,7 @@
     <title>Login</title>
     <style>
         body {
-            background-color: #fff !important;
+            background-color: #fff;
             margin: 0;
             padding: 0;
             font-family: 'Montserrat', sans-serif;

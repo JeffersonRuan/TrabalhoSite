@@ -11,11 +11,15 @@
 </head>
 <body style="display: flex; flex-direction: column; height: 100vh; margin: 0;">
     <!-- Menu superior -->
-    <div class="navbar" style="background-color: #333; padding: 10px; text-align: center; flex-shrink: 0;">
-        <a href="index.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Produtos</a>
-        <a href="cadastro.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Cadastro</a>
-        <a href="carrinho.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Carrinho</a>
-        <a href="pedidos.jsp" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Pedidos</a>
+    <div class="navbar">
+        <p>Loja</p>
+        <div>
+            <a href="index.jsp">Produtos</a>
+            <a href="cadastro.jsp">Cadastro</a>
+            <a href="carrinho.jsp">Carrinho</a>
+            <a href="pedidos.jsp">Pedidos</a>
+        </div>
+        <a href="#">Sair</a>
     </div>
 
     <!-- Conteúdo da página -->
