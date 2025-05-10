@@ -77,13 +77,13 @@
 <body>
     <div class="login-container">
         <h2>Cadastro</h2>
-        <form action="carrinho" method="post">
+        <form action="cadastrarUsuario" method="post">
             <label for="name">Nome</label>
-            <input type="text" name="name">
-            <label for="user">Email</label>
-            <input type="text" name="user">
-            <label for="password">Senha</label>
-            <input type="password" name="password">
+            <input type="text" name="nome" id="nome" required >
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" required >
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" required >
             <button class="button" type="submit">Cadastrar</button>
             <div class="link-container">
                 <a href="login.jsp">Já tenho conta</a>
