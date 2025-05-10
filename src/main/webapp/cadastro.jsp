@@ -25,7 +25,11 @@
         <p>Loja</p>
         <div>
             <a href="index.jsp">Produtos</a>
+            <%
+                if (usuario != null && "ADMIN".equals(usuario.getPermissao())) {
+            %>
             <a href="cadastro.jsp">Cadastro</a>
+            <% } %>
             <a href="carrinho.jsp">Carrinho</a>
             <a href="pedidos.jsp">Pedidos</a>
         </div>

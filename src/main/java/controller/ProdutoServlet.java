@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Usuario;
 
 
 import java.io.IOException;
@@ -16,6 +17,15 @@ import java.util.List;
     public class ProdutoServlet extends HttpServlet {
         @Override
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+            // Verifica permissão
+            Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
+
+            if (usuario == null || !"ADMIN".equalsIgnoreCase(usuario.getPermissao())) {
+                response.sendError(HttpServletResponse.SC_FORBIDDEN, "Acesso negado.");
+                return;
+            }
+
             try {
                 String nome = request.getParameter("nome");
                 String descricao = request.getParameter("descricao");

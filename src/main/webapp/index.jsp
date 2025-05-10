@@ -28,7 +28,11 @@
     <p>Loja</p>
     <div>
         <a href="index.jsp">Produtos</a>
-        <a href="cadastro.jsp">Cadastro</a>
+        <%
+            if (usuario != null && "ADMIN".equals(usuario.getPermissao())) {
+        %>
+            <a href="cadastro.jsp">Cadastro</a>
+        <% } %>
         <a href="carrinho.jsp">Carrinho</a>
         <a href="pedidos.jsp">Pedidos</a>
     </div>
@@ -65,7 +69,12 @@
         } else {
         %>
         <p>Nenhum produto cadastrado.</p>
+        <%
+            if (usuario != null && "ADMIN".equals(usuario.getPermissao())) {
+        %>
         <a class="button" href="cadastro.jsp">Clique para cadastrar</a>
+        <% } %>
+
         <%
             }
         %>
