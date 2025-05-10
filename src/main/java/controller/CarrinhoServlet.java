@@ -54,7 +54,7 @@ public class CarrinhoServlet extends HttpServlet {
                 }
 
                 if (!produtoExiste) {
-                    Produto produto = new Produto(nome, descricao, preco, 1);
+                    Produto produto = new Produto();
                     carrinho.add(produto);
                 }
 
