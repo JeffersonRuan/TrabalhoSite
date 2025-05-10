@@ -3,6 +3,7 @@ package model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "usuario")
 public class Usuario {
 
     @Id
@@ -10,7 +11,10 @@ public class Usuario {
     private int id;
 
     private String nome;
+
+    @Column(unique = true)
     private String email;
+
     private String senha;
     private String permissao;
 

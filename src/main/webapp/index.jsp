@@ -1,5 +1,16 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="model.Produto, java.util.List" %>
+<%@ page import="model.Usuario" %>
+<%@ page import="jakarta.servlet.http.HttpSession" %>
+
+<%
+    Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
+    if (usuario == null) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -21,11 +32,12 @@
         <a href="carrinho.jsp">Carrinho</a>
         <a href="pedidos.jsp">Pedidos</a>
     </div>
-    <a href="#">Sair</a>
+    <a href="logout.jsp">Sair</a>
 </div>
 
 <!-- Conteúdo da página -->
 <div class="content scrollable">
+    <h2>Bem-vindo, <%= usuario.getNome() %>!</h2>
     <h1>Produtos</h1>
     <div class="contentProdutos">
         <%

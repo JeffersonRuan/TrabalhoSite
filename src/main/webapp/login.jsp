@@ -71,22 +71,34 @@
             font-weight: bolder;
             color: #115EA3;
         }
+
+        .erro {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="carrinho" method="post">
-            <label for="user">Usuário</label>
-            <input type="text" name="user">
-            <label for="password">Senha</label>
-            <input type="password" name="password">
+        <form action="login" method="post">
+            <label for="user">Email</label>
+            <input type="text" name="email">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha">
+            <% if (request.getAttribute("erro") != null) { %>
+            <p class="erro"><%= request.getAttribute("erro") %></p>
+            <% } %>
             <button class="button" type="submit">Entrar</button>
             <div class="link-container">
                 <a href="cadastroUser.jsp">Criar uma conta</a>
             </div>
         </form>
+
+
+
     </div>
 </body>
 </html>
