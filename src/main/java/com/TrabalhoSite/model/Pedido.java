@@ -1,4 +1,4 @@
-package model;
+package com.TrabalhoSite.model;
 
 import java.util.List;
 

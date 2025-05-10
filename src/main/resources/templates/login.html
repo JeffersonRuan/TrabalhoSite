@@ -1,12 +1,9 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="com.TrabalhoSite.model.Produto, java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../resources/static/css/global.css">
     <title>Login</title>
     <style>
         body {
@@ -75,22 +72,19 @@
 </head>
 
 <body>
-    <div class="login-container">
-        <h2>Cadastro</h2>
-        <form id="cadastroForm">
-            <label for="name">Nome</label>
-            <input type="text" name="name" id="name">
-            <label for="user">Email</label>
-            <input type="text" name="user" id="email">
-            <label for="password">Senha</label>
-            <input type="password" name="password" id="password">
-            <button class="button" type="submit">Cadastrar</button>
-            <div class="link-container">
-                <a href="login.jsp">Já tenho conta</a>
-            </div>
-        </form>
-    </div>
-
-    <script src="../resources/static/js/usuarios.js" defer></script>
+<div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Email" required>
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Senha" required>
+        <button class="button" type="submit">Entrar</button>
+        <div class="link-container">
+            <a href="/cadastroUsuario">Criar uma conta</a>
+        </div>
+    </form>
+</div>
+<script src="/js/usuarios.js"></script>
 </body>
 </html>

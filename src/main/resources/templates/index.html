@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Home</title>
+
+</head>
+<body>
+<!-- Menu superior -->
+<div class="navbar">
+    <p>Loja</p>
+    <div>
+        <a href="/">Produtos</a>
+        <a href="/cadastroProduto">Cadastro</a>
+        <a href="/carrinho">Carrinho</a>
+        <a href="/pedidos">Pedidos</a>
+    </div>
+    <a href="/login">Sair</a> <!-- ou outra rota se "Sair" for login ou logout -->
+</div>
+
+<!-- Conteúdo da página -->
+<div class="content" style="padding: 20px; flex-grow: 1; overflow-y: auto;">
+<!--    <h1>Produtos</h1>-->
+    <div class="contentProdutos">
+<!--        <div class="produto">-->
+<!--            Nome: <%= p.getNome() %><br>-->
+<!--            Descrição: <%= p.getDescricao() %><br>-->
+<!--            Preço: R$ <%= p.getPreco() %><br>-->
+<!--            Quantidade: <%= p.getQuantidade() %><br>-->
+
+<!--            &lt;!&ndash; Formulário para adicionar ao carrinho &ndash;&gt;-->
+<!--            <form action="carrinho" method="post">-->
+<!--                <input type="hidden" name="acao" value="adicionar">-->
+<!--                <input type="hidden" name="nome" value="<%= p.getNome() %>">-->
+<!--                <input type="hidden" name="descricao" value="<%= p.getDescricao() %>">-->
+<!--                <input type="hidden" name="preco" value="<%= p.getPreco() %>">-->
+<!--                <input type="hidden" name="quantidade" value="<%= p.getQuantidade() %>">-->
+<!--                <button class="button" type="submit">Adicionar ao carrinho</button>-->
+<!--            </form>-->
+<!--        </div>-->
+        <p>Nenhum produto cadastrado.</p>
+        <a class="button" href="/cadastroProduto">Clique para cadastrar</a>
+    </div>
+</div>
+
+</body>
+</html>
