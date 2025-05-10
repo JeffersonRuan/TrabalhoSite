@@ -21,15 +21,6 @@ public class UsuarioController {
         return usuarioRepository.save(usuario);
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody Usuario login) {
-        Usuario usuario = usuarioRepository.findByEmail(login.getEmail());
-        if (usuario != null && usuario.getSenha().equals(login.getSenha())) {
-            return ResponseEntity.ok("Login realizado com sucesso");
-        }
-        return ResponseEntity.status(401).body("Email ou senha incorretos");
-    }
-
     @GetMapping
     public List<Usuario> listarTodos() {
         return usuarioRepository.findAll();

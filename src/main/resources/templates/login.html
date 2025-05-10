@@ -4,7 +4,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../resources/static/css/global.css">
     <title>Login</title>
     <style>
         body {
@@ -75,16 +74,17 @@
 <body>
 <div class="login-container">
     <h2>Login</h2>
-    <form action="carrinho" method="post">
-        <label for="user">Email</label>
-        <input type="text" name="user">
-        <label for="password">Senha</label>
-        <input type="password" name="password">
+    <form id="loginForm">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Email" required>
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Senha" required>
         <button class="button" type="submit">Entrar</button>
         <div class="link-container">
-            <a href="cadastroUser.html">Criar uma conta</a>
+            <a href="/cadastroUsuario">Criar uma conta</a>
         </div>
     </form>
 </div>
+<script src="/js/usuarios.js"></script>
 </body>
 </html>
