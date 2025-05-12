@@ -32,8 +32,10 @@ public class CarrinhoServlet extends HttpServlet {
                 float preco = Float.parseFloat(request.getParameter("preco"));
                 int quantidade = Integer.parseInt(request.getParameter("quantidade"));
 
+                // Verifica se a quantidade solicitada é válida
                 if (quantidade <= 0) {
-                    request.setAttribute("erro", "Produto sem estoque!");
+                    request.setAttribute("erro", "Quantidade inválida!");
+                    request.getRequestDispatcher("carrinho.jsp").forward(request, response);
                     return;
                 }
 
@@ -42,24 +44,24 @@ public class CarrinhoServlet extends HttpServlet {
                 for (Produto p : carrinho) {
                     if (p.getNome().equals(nome)) {
                         produtoExiste = true;
-                        if (p.getQuantidade() < quantidade) {
-                            p.setQuantidade(p.getQuantidade() + 1);
-                            break;
-                        } else {
-                            request.setAttribute("erro", "Não é possível adicionar mais produtos!");
-                            request.getRequestDispatcher("carrinho.jsp").forward(request, response);
-                            return;
-                        }
+                        // Atualiza a quantidade se o produto já existir no carrinho
+                        p.setQuantidade(p.getQuantidade() + quantidade);
+                        break;
                     }
                 }
 
                 if (!produtoExiste) {
                     Produto produto = new Produto();
+                    produto.setNome(nome);
+                    produto.setDescricao(descricao);
+                    produto.setPreco(preco);
+                    produto.setQuantidade(quantidade);
                     carrinho.add(produto);
                 }
 
-                request.setAttribute("sucesso", "Produto adicionado ao carrinho!");
                 session.setAttribute("carrinho", carrinho);
+                request.setAttribute("sucesso", "Produto adicionado ao carrinho!");
+                response.sendRedirect("carrinho.jsp");
 
             } else if ("remover".equals(acao)) {
                 String nomeProduto = request.getParameter("nome");
@@ -68,9 +70,22 @@ public class CarrinhoServlet extends HttpServlet {
 
                 session.setAttribute("carrinho", carrinho);
                 request.setAttribute("sucesso", "Produto removido!");
+                response.sendRedirect("carrinho.jsp");
             }
 
-            response.sendRedirect("carrinho.jsp");
+            // Calcular o valor total e a quantidade total
+            float valorTotal = 0;
+            int quantidadeTotal = 0;
+
+            for (Produto p : carrinho) {
+                valorTotal += p.getPreco() * p.getQuantidade();
+                quantidadeTotal += p.getQuantidade();
+            }
+
+            // Passar esses valores para a página JSP
+            session.setAttribute("valorTotal", valorTotal);
+            session.setAttribute("quantidadeTotal", quantidadeTotal);
+
         } catch (Exception e) {
             request.setAttribute("erro", "Erro inesperado: " + e.getMessage());
             request.getRequestDispatcher("carrinho.jsp").forward(request, response);

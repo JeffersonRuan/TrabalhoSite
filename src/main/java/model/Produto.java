@@ -2,6 +2,8 @@ package model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Produto {
 
@@ -14,7 +16,10 @@ public class Produto {
     private float preco;
     private int quantidade;
 
-    // Getter e Setter para id
+    @ManyToMany(mappedBy = "produtos")
+    private List<Pedido> pedidos;
+
+    // Getters e setters
     public int getId() {
         return id;
     }
@@ -23,7 +28,6 @@ public class Produto {
         this.id = id;
     }
 
-    // Getter e Setter para nome
     public String getNome() {
         return nome;
     }
@@ -32,7 +36,6 @@ public class Produto {
         this.nome = nome;
     }
 
-    // Getter e Setter para descricao
     public String getDescricao() {
         return descricao;
     }
@@ -41,7 +44,6 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    // Getter e Setter para preco
     public float getPreco() {
         return preco;
     }
@@ -50,12 +52,19 @@ public class Produto {
         this.preco = preco;
     }
 
-    // Getter e Setter para quantidade
     public int getQuantidade() {
         return quantidade;
     }
 
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
+    }
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
     }
 }

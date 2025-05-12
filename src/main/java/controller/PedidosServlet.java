@@ -8,7 +8,10 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.Produto;
+import util.JPAUtil;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,23 +40,59 @@ public class PedidosServlet extends HttpServlet {
             String acao = request.getParameter("acao");
 
             if ("finalizar".equals(acao)) {
+                // Gerando número do pedido
                 int numeroPedido = pedidos.size() + 1;
-                Pedido novoPedido = new Pedido(numeroPedido, new ArrayList<>(carrinho));
 
-                pedidos.add(novoPedido);
-                session.setAttribute("pedidos", pedidos);
+                Pedido novoPedido = new Pedido();
+                novoPedido.setNumeroPedido(numeroPedido);
+                novoPedido.setProdutos(carrinho);  // Associa os produtos ao pedido
 
-                for (Produto produto : produtos) {
-                    for (Produto prod : carrinho ) {
-                        if (produto.getQuantidade() > 0) {
-                            produto.setQuantidade(produto.getQuantidade() - prod.getQuantidade());
-                        }
+                // Atualizando o estoque de produtos
+                for (Produto prod : carrinho) {
+                    if (prod.getQuantidade() >= 1) {
+                        prod.setQuantidade(prod.getQuantidade() - 1);  // Atualiza estoque
                     }
                 }
 
-                session.removeAttribute("carrinho");
-                request.setAttribute("sucesso", "Pedido finalizado com sucesso!");
-                request.getRequestDispatcher("pedidos.jsp").forward(request, response);
+                // Persistindo o pedido e produtos no banco
+                EntityManager em = null;
+                EntityTransaction tx = null;
+
+                try {
+                    em = JPAUtil.getEntityManager();
+                    tx = em.getTransaction();
+                    tx.begin();
+
+                    // Persistindo o novo pedido
+                    em.persist(novoPedido);
+
+                    // Persistindo os produtos atualizados
+                    for (Produto prod : carrinho) {
+                        em.merge(prod);
+                    }
+
+                    tx.commit();
+
+                    pedidos.add(novoPedido);
+                    session.setAttribute("pedidos", pedidos);
+
+                    // Removendo o carrinho após a finalização do pedido
+                    session.removeAttribute("carrinho");
+
+                    request.setAttribute("sucesso", "Pedido finalizado com sucesso!");
+                    request.getRequestDispatcher("pedidos.jsp").forward(request, response);
+
+                } catch (Exception e) {
+                    if (tx != null && tx.isActive()) {
+                        tx.rollback();
+                    }
+                    request.setAttribute("erro", "Erro ao finalizar o pedido: " + e.getMessage());
+                    request.getRequestDispatcher("pedidos.jsp").forward(request, response);
+                } finally {
+                    if (em != null) {
+                        em.close();
+                    }
+                }
             }
 
         } catch (Exception e) {
