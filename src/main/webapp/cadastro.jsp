@@ -25,7 +25,7 @@
 <div class="navbar">
     <p>Loja</p>
     <div>
-        <a href="index.jsp">Produtos</a>
+        <a href="${pageContext.request.contextPath}/produtos">Produtos</a>
         <%
             if (usuario != null && "ADMIN".equals(usuario.getPermissao())) {
         %>

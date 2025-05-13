@@ -16,7 +16,7 @@ public class Pedido {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
-            name = "pedido_produtos",
+            name = "pedido_produto",
             joinColumns = @JoinColumn(name = "pedido_id"),
             inverseJoinColumns = @JoinColumn(name = "produto_id")
     )
